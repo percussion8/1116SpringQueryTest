@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.korea.mapper.BuyerMapper">
+	<insert id="insert">
+		insert into buy_tbl values(#{bid}, #{bname}, #{bpass}, #{badd}, #{badd2}, #{homephone}, #{mobile})
+	</insert>
+	<select id="login" resultType="com.korea.domain.BuyerDTO">
+		select * from buy_tbl where bid = #{param1} and bpass = #{param2}
+	</select>
+</mapper>

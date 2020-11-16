@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.korea.mapper.ProdMapper">
+	<insert id="insertO">
+		insert into order_tbl values (#{oid}, #{oname}, #{badd}, #{badd2}, #{mobile}, #{orderno}, #{oprod}, #{oprice}, #{oquant}, #{totprice}, #{coupon}, #{used})
+	</insert>
+	<select id="find" resultType="com.korea.domain.ProdDTO">
+		select * from order_tbl where orderno = #{param2} and oid = #{param1}
+	</select>
+	<delete id="payback">
+		delete from order_tbl where orderno = #{param2} and oid = #{param1}
+	</delete>
+
+</mapper>
